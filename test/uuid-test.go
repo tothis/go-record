@@ -6,16 +6,12 @@ import (
 
 func main() {
 	// 创建 UUID v4
-	u1 := uuid.Must(uuid.NewV4())
+	u1 := uuid.Must(uuid.NewV4(), nil)
 	println(`生成的UUID v4`)
 	println(u1.String())
 
 	// 创建可以进行错误处理的 UUID v4
-	u2, err1 := uuid.NewV4()
-	if err1 != nil {
-		println(`生成一个UUID v4时出现错误`)
-		panic(err1)
-	}
+	u2 := uuid.NewV4()
 	println(`生成的UUID v4`)
 	println(u2.String())
 
